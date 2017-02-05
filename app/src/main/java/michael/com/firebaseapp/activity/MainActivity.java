@@ -1,6 +1,10 @@
 package michael.com.firebaseapp.activity;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -26,34 +30,42 @@ import com.google.firebase.database.ValueEventListener;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import michael.com.firebaseapp.R;
+import michael.com.firebaseapp.addpost.AddPostActivity;
 import michael.com.firebaseapp.model.Post;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private FirebaseAuth mFirebaseAuth;
     private FirebaseUser mFirebaseUser;
     private DatabaseReference mDatabase;
     private String mUserId;
-    @BindView(R.id.toolbar)
-    public Toolbar mToolbar;
-    @BindView(R.id.listView)
-    public ListView mListView;
-    @BindView(R.id.postTitle)
-    public EditText mEditTextTitle;
-    @BindView(R.id.postBody)
-    public EditText mEditTextBody;
-    @BindView(R.id.addButton)
-    public Button mButton;
     private ArrayAdapter<String> adapter;
+    @BindView(R.id.toolbar)
+    Toolbar mToolbar;
+    @BindView(R.id.listView)
+    ListView mListView;
+    @BindView(R.id.postTitle)
+    EditText mEditTextTitle;
+    @BindView(R.id.postBody)
+    EditText mEditTextBody;
+    @BindView(R.id.addButton)
+    Button mButton;
+    @BindView(R.id.nav_view)
+    NavigationView navigationView;
+    @BindView(R.id.drawer_layout)
+    DrawerLayout drawer;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        setContentView(R.layout.activity_main2);
+
         ButterKnife.bind(this);
         setSupportActionBar(mToolbar);
+        navigationView.setNavigationItemSelectedListener(this);
 
         initFireBase(); // Initialize FireBase
 
@@ -72,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
 
     private void populateListViewWithData() {
         mDatabase.child("users").child(mUserId).child("posts").addChildEventListener(new ChildEventListener() {
@@ -192,19 +205,53 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_logout) {
-            mFirebaseAuth.signOut();
-            loadLogInView();
+        if (id == R.id.nav_top_posts) {
+            // Handle the camera action
+        } else if (id == R.id.nav_my_posts) {
+
+            Intent intent = new Intent(MainActivity.this, AddPostActivity.class);
+            startActivity(intent);
+
+        } else if (id == R.id.nav_search) {
+
+        } else if (id == R.id.nav_log_out) {
+
         }
 
-        return super.onOptionsItemSelected(item);
+//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
     }
 
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
 }
+
+
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        // Handle action bar item clicks here. The action bar will
+//        // automatically handle clicks on the Home/Up button, so long
+//        // as you specify a parent activity in AndroidManifest.xml.
+//        int id = item.getItemId();
+//
+//        //noinspection SimplifiableIfStatement
+////        if (id == R.id.action_logout) {
+//            mFirebaseAuth.signOut();
+//            loadLogInView();
+//        }
+//
+//        return super.onOptionsItemSelected(item);
+//    }
+
+

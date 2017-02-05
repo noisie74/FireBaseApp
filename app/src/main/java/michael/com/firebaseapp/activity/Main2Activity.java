@@ -75,6 +75,8 @@ public class Main2Activity extends AppCompatActivity
             // Handle the camera action
         } else if (id == R.id.nav_my_posts) {
 
+
+
         } else if (id == R.id.nav_search) {
 
         } else if (id == R.id.nav_log_out) {
