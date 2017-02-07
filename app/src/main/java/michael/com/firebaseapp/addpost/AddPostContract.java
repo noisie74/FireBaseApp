@@ -8,11 +8,14 @@ import rx.Observable;
 
 public interface AddPostContract {
 
+    void showPostsList();
+
+
     interface View {
 
         void showEmptyPostError();
 
-        void showPostsList();
+        void hideFragment();
     }
 
     interface UserActionListener {
@@ -24,5 +27,7 @@ public interface AddPostContract {
         void savePost(String title, String body);
 
         void loadPostFailed();
+
+        void getPost(String title);
     }
 }

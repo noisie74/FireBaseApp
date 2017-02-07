@@ -8,16 +8,20 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import michael.com.firebaseapp.R;
+import michael.com.firebaseapp.addpost.adapter.AddPostAdapter;
 
-public class AddPostActivity extends AppCompatActivity {
+public class AddPostActivity extends AppCompatActivity implements AddPostContract {
 
     @BindView(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.recycler_view) RecyclerView mRecyclerView;
+    AddPostAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +33,7 @@ public class AddPostActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(R.string.add_note);
+        actionBar.setHomeButtonEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
 
@@ -52,4 +57,8 @@ public class AddPostActivity extends AppCompatActivity {
         transaction.commit();
     }
 
+    @Override
+    public void showPostsList() {
+
+    }
 }

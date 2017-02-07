@@ -1,4 +1,4 @@
-package michael.com.firebaseapp.model;
+package michael.com.firebaseapp.data.model;
 
 /**
  * Created by Mikhail on 1/31/17.

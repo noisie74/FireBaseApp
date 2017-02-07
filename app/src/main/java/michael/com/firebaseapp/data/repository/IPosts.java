@@ -1,6 +1,6 @@
-package michael.com.firebaseapp.post;
+package michael.com.firebaseapp.data.repository;
 
-import michael.com.firebaseapp.model.Post;
+import michael.com.firebaseapp.data.model.Post;
 import rx.Observable;
 
 /**

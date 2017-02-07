@@ -1,6 +1,5 @@
 package michael.com.firebaseapp.di;
 
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -11,8 +10,8 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 import michael.com.firebaseapp.FireBaseApp;
-import michael.com.firebaseapp.post.IPosts;
-import michael.com.firebaseapp.post.PostRepository;
+import michael.com.firebaseapp.data.repository.IPosts;
+import michael.com.firebaseapp.data.repository.PostRepository;
 
 /**
  * Created by Mikhail on 2/5/17.

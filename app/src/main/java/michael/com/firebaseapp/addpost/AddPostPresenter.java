@@ -2,8 +2,8 @@ package michael.com.firebaseapp.addpost;
 
 import javax.inject.Inject;
 
-import michael.com.firebaseapp.model.Post;
-import michael.com.firebaseapp.post.PostRepository;
+import michael.com.firebaseapp.data.model.Post;
+import michael.com.firebaseapp.data.repository.PostRepository;
 
 /**
  * Created by Mikhail on 2/2/17.
@@ -30,10 +30,15 @@ public class AddPostPresenter implements AddPostContract.UserActionListener {
             mView.showEmptyPostError();
         } else {
             mRepository.sendPost(post);
-            mView.showPostsList();
         }
     }
 
+    @Override
+    public void getPost(String title) {
+        mView.hideFragment();
+//        mView.showPostsList();
+
+    }
 
     @Override
     public void loadPostFailed() {

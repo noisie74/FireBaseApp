@@ -56,8 +56,9 @@ public class AddPostFragment extends Fragment implements AddPostContract.View {
         Snackbar.make(mTitleEditText, R.string.title_empty_error, Snackbar.LENGTH_LONG).show();
     }
 
-    @Override
-    public void showPostsList() {
 
+    @Override
+    public void hideFragment() {
+        getActivity().getSupportFragmentManager().popBackStack();
     }
 }

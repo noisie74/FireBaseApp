@@ -1,25 +1,18 @@
-package michael.com.firebaseapp.post;
+package michael.com.firebaseapp.data.repository;
 
-import android.support.annotation.NonNull;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
-import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import javax.inject.Inject;
-
 import dagger.internal.Preconditions;
-import michael.com.firebaseapp.model.Post;
+import michael.com.firebaseapp.data.model.Post;
 import rx.Observable;
 import rx.Subscriber;
-import rx.functions.Action0;
 import rx.subscriptions.Subscriptions;
 
 /**
@@ -29,17 +22,20 @@ import rx.subscriptions.Subscriptions;
 public class PostRepository implements IPosts {
 
     DatabaseReference mDatabaseReference;
+    FirebaseAuth mFirebaseAuth;
+    FirebaseUser mFirebaseUser;
 
     public PostRepository(DatabaseReference databaseReference) {
         this.mDatabaseReference = Preconditions.checkNotNull(databaseReference);
-
+        mFirebaseAuth = FirebaseAuth.getInstance();
+        mFirebaseUser = mFirebaseAuth.getCurrentUser();
     }
 
     @Override
     public Observable getPost(String title) {
         Query query = mDatabaseReference
                 .child("users")
-                .child("")
+                .child(mFirebaseUser.getUid())
                 .child("posts")
                 .orderByChild("title");
         return observe(query);
@@ -53,7 +49,7 @@ public class PostRepository implements IPosts {
             @Override
             public void call(final Subscriber<? super Boolean> subscriber) {
                 mDatabaseReference.child("users")
-                        .child("")
+                        .child(mFirebaseUser.getUid())
                         .child(post.getTitle())
                         .child(post.getBody())
                         .push()
