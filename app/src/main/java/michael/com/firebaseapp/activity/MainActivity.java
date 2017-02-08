@@ -22,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import michael.com.firebaseapp.R;
-import michael.com.firebaseapp.addpost.AddPostActivity;
+import michael.com.firebaseapp.addpost.PostActivity;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -197,7 +197,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             // Handle the camera action
         } else if (id == R.id.nav_my_posts) {
 
-            Intent intent = new Intent(MainActivity.this, AddPostActivity.class);
+            Intent intent = new Intent(MainActivity.this, PostActivity.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_search) {

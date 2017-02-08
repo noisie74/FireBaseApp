@@ -9,7 +9,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import javax.inject.Inject;
+
 import dagger.internal.Preconditions;
+import michael.com.firebaseapp.FireBaseApp;
 import michael.com.firebaseapp.data.model.Post;
 import rx.Observable;
 import rx.Subscriber;
@@ -21,15 +24,21 @@ import rx.subscriptions.Subscriptions;
 
 public class PostRepository implements IPosts {
 
+    FireBaseApp fireBaseApp;
     DatabaseReference mDatabaseReference;
     FirebaseAuth mFirebaseAuth;
     FirebaseUser mFirebaseUser;
 
+    @Inject
     public PostRepository(DatabaseReference databaseReference) {
         this.mDatabaseReference = Preconditions.checkNotNull(databaseReference);
         mFirebaseAuth = FirebaseAuth.getInstance();
         mFirebaseUser = mFirebaseAuth.getCurrentUser();
     }
+
+//    private void initInjection() {
+//        (FireBaseApp) fireBaseApp.getApplicationComponent().inject();
+//    }
 
     @Override
     public Observable getPost(String title) {

@@ -26,6 +26,10 @@ public class DataModule {
         this.mFirebaseApp = fireBaseApp;
     }
 
+    @Provides FireBaseApp provideFireBaseApplication() {
+        return mFirebaseApp;
+    }
+
     @Provides
     @Singleton
     FirebaseAuth getFirebaseAuth() {

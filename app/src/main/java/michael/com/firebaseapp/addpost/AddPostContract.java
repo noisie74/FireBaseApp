@@ -8,9 +8,6 @@ import rx.Observable;
 
 public interface AddPostContract {
 
-    void showPostsList();
-
-
     interface View {
 
         void showEmptyPostError();
