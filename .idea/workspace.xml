@@ -9,22 +9,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a4bfdff-80fe-44c6-b6e3-68c2d13a57e6" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/post/IPosts.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/post/PostRepository.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/model/Post.java" afterPath="$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/data/model/Post.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/post/IPosts.java" afterPath="$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/data/repository/IPosts.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/post/PostRepository.java" afterPath="$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/data/repository/PostRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/activity/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/activity/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/addpost/AddPostActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/addpost/AddPostActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/addpost/AddPostContract.java" afterPath="$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/addpost/AddPostContract.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/addpost/AddPostFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/addpost/AddPostFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/addpost/AddPostPresenter.java" afterPath="$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/addpost/AddPostPresenter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/addpost/adapter/AddPostAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/addpost/adapter/AddPostAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/di/DataModule.java" afterPath="$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/di/DataModule.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_add_post.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_add_post.xml" />
-    </list>
+    <list default="true" id="8a4bfdff-80fe-44c6-b6e3-68c2d13a57e6" name="Default" comment="" />
     <ignored path="FireBaseApp.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,7 +47,7 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/activity/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2250">
+            <state relative-caret-position="930">
               <caret line="172" column="7" selection-start-line="172" selection-start-column="7" selection-end-line="173" selection-end-column="55" />
               <folding />
             </state>
@@ -72,14 +57,21 @@
       <file leaf-file-name="DataModule.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/di/DataModule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="195">
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding>
+                <element signature="e#635#636#0" expanded="true" />
+                <element signature="e#682#683#0" expanded="true" />
+                <element signature="e#749#750#0" expanded="true" />
+                <element signature="e#798#799#0" expanded="true" />
+                <element signature="e#889#890#0" expanded="true" />
+                <element signature="e#941#942#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ApplicationComponent.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ApplicationComponent.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/di/ApplicationComponent.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
@@ -134,14 +126,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menu_main.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
+      <file leaf-file-name="Post.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/data/model/Post.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="52" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
+            <state relative-caret-position="648">
+              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -2694,7 +2683,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="6" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2959,23 +2948,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/data/model/Post.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding>
-            <element signature="e#323#324#0" expanded="false" />
-            <element signature="e#351#352#0" expanded="false" />
-            <element signature="e#393#394#0" expanded="false" />
-            <element signature="e#427#428#0" expanded="false" />
-            <element signature="e#458#459#0" expanded="false" />
-            <element signature="e#485#486#0" expanded="false" />
-            <element signature="e#525#526#0" expanded="false" />
-            <element signature="e#557#558#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/build/generated/source/apt/debug/michael/com/firebaseapp/di/DataModule_GetFirebaseAuthFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -3141,14 +3113,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/activity/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2250">
-          <caret line="172" column="7" selection-start-line="172" selection-start-column="7" selection-end-line="173" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/addpost/AddPostContract.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -3206,18 +3170,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/di/DataModule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/di/ApplicationComponent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/activity/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="930">
+          <caret line="172" column="7" selection-start-line="172" selection-start-column="7" selection-end-line="173" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/di/DataModule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="e#635#636#0" expanded="true" />
+            <element signature="e#682#683#0" expanded="true" />
+            <element signature="e#749#750#0" expanded="true" />
+            <element signature="e#798#799#0" expanded="true" />
+            <element signature="e#889#890#0" expanded="true" />
+            <element signature="e#941#942#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/michael/com/firebaseapp/data/model/Post.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding />
         </state>
       </provider>
