@@ -36,6 +36,8 @@
             android:label="@string/title_activity_add_post"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity android:name=".toppost.TopPostActivity">
+        </activity>
     </application>
 
 </manifest>

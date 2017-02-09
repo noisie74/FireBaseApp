@@ -23,8 +23,6 @@ import michael.com.firebaseapp.showpost.ShowPostFragment;
 public class PostActivity extends AppCompatActivity implements AddPostContract {
 
     @BindView(R.id.toolbar) Toolbar toolbar;
-    @BindView(R.id.recycler_view) RecyclerView mRecyclerView;
-    AddPostAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +39,7 @@ public class PostActivity extends AppCompatActivity implements AddPostContract {
         actionBar.setDisplayShowHomeEnabled(true);
 
 //        if (null == savedInstanceState) {
-            initFragment(ShowPostFragment.newInstance());
+        initFragment(ShowPostFragment.newInstance());
 //        }
 
     }
@@ -53,7 +51,7 @@ public class PostActivity extends AppCompatActivity implements AddPostContract {
         return true;
     }
 
-        @Override
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -62,6 +60,7 @@ public class PostActivity extends AppCompatActivity implements AddPostContract {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_new_post) {
+
             initFragment(AddPostFragment.newInstance());
 
         }
@@ -79,7 +78,8 @@ public class PostActivity extends AppCompatActivity implements AddPostContract {
         // Add the AddNoteFragment to the layout
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.add(R.id.contentFrame, detailFragment);
+        transaction.add(R.id.contentFrame, detailFragment, detailFragment.toString());
+        transaction.addToBackStack(detailFragment.toString());
         transaction.commit();
     }
 

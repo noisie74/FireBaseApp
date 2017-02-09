@@ -23,6 +23,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import michael.com.firebaseapp.R;
 import michael.com.firebaseapp.addpost.PostActivity;
+import michael.com.firebaseapp.toppost.TopPostActivity;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -194,12 +195,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id == R.id.nav_top_posts) {
-            // Handle the camera action
+            Intent intent = new Intent(MainActivity.this, TopPostActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_my_posts) {
-
             Intent intent = new Intent(MainActivity.this, PostActivity.class);
             startActivity(intent);
-
         } else if (id == R.id.nav_search) {
 
         } else if (id == R.id.nav_log_out) {

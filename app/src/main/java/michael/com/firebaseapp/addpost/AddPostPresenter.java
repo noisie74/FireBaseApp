@@ -2,6 +2,7 @@ package michael.com.firebaseapp.addpost;
 
 import javax.inject.Inject;
 
+import michael.com.firebaseapp.FireBaseApp;
 import michael.com.firebaseapp.data.model.Post;
 import michael.com.firebaseapp.data.repository.PostRepository;
 
@@ -12,14 +13,16 @@ import michael.com.firebaseapp.data.repository.PostRepository;
 public class AddPostPresenter implements AddPostContract.UserActionListener {
 
     @Inject PostRepository mRepository;
+    FireBaseApp mFireBaseApp;
 
     private final AddPostContract.View mView;
-//    private final PostRepository mRepository;
 
 
     public AddPostPresenter(PostRepository postRepository, AddPostContract.View view) {
-        mRepository = postRepository;
+        this.mRepository = postRepository;
         mView = view;
+
+        mFireBaseApp.getApplicationComponent().inject(this);
     }
 
     @Override
@@ -30,18 +33,8 @@ public class AddPostPresenter implements AddPostContract.UserActionListener {
             mView.showEmptyPostError();
         } else {
             mRepository.sendPost(post);
+            mView.hideFragment();
         }
     }
 
-    @Override
-    public void getPost(String title) {
-        mView.hideFragment();
-//        mView.showPostsList();
-
-    }
-
-    @Override
-    public void loadPostFailed() {
-        mView.showEmptyPostError();
-    }
 }

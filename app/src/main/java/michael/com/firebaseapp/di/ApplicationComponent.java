@@ -4,6 +4,7 @@ import javax.inject.Singleton;
 
 import dagger.Component;
 import michael.com.firebaseapp.activity.MainActivity;
+import michael.com.firebaseapp.addpost.AddPostPresenter;
 import michael.com.firebaseapp.addpost.PostActivity;
 import michael.com.firebaseapp.data.repository.PostRepository;
 
@@ -20,4 +21,6 @@ public interface ApplicationComponent {
     void inject(PostActivity postActivity);
 
     void inject(PostRepository postRepository);
+
+    void inject(AddPostPresenter addPostPresenter);
 }

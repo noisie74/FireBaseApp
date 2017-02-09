@@ -26,14 +26,10 @@ import michael.com.firebaseapp.R;
 
 public class LogInActivity extends AppCompatActivity {
 
-    @BindView(R.id.emailField)
-    public EditText emailEditText;
-    @BindView(R.id.passwordField)
-    public EditText passwordEditText;
-    @BindView(R.id.loginButton)
-    public Button logInButton;
-    @BindView(R.id.signUpText)
-    protected TextView signUpTextView;
+    @BindView(R.id.emailField) EditText emailEditText;
+    @BindView(R.id.passwordField) EditText passwordEditText;
+    @BindView(R.id.loginButton) Button logInButton;
+    @BindView(R.id.signUpText) TextView signUpTextView;
     private FirebaseAuth mFirebaseAuth;
 
     @Override

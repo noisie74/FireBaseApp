@@ -42,14 +42,14 @@ public class DataModule {
         return firebaseAuth.getCurrentUser();
     }
 
-    @Provides
-    @Singleton
-    IPosts providePosts() {
-        DatabaseReference databaseReference = FirebaseDatabase
-                .getInstance()
-                .getReference();
-        return new PostRepository(databaseReference);
-    }
+//    @Provides
+//    @Singleton
+//    IPosts providePosts() {
+//        DatabaseReference databaseReference = FirebaseDatabase
+//                .getInstance()
+//                .getReference();
+//        return new PostRepository(databaseReference);
+//    }
 
 
 }

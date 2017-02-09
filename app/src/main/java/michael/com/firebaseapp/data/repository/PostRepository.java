@@ -1,11 +1,17 @@
 package michael.com.firebaseapp.data.repository;
 
+import android.support.annotation.NonNull;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
@@ -29,12 +35,13 @@ public class PostRepository implements IPosts {
     FirebaseAuth mFirebaseAuth;
     FirebaseUser mFirebaseUser;
 
-    @Inject
-    public PostRepository(DatabaseReference databaseReference) {
-        this.mDatabaseReference = Preconditions.checkNotNull(databaseReference);
+    @Inject public PostRepository() {
         mFirebaseAuth = FirebaseAuth.getInstance();
         mFirebaseUser = mFirebaseAuth.getCurrentUser();
+        mDatabaseReference = FirebaseDatabase.getInstance().getReference();
     }
+
+
 
 //    private void initInjection() {
 //        (FireBaseApp) fireBaseApp.getApplicationComponent().inject();
@@ -50,6 +57,7 @@ public class PostRepository implements IPosts {
         return observe(query);
 
     }
+//            mDatabase.child("users").child(mUserId).child("posts").push().setValue(post);
 
 
     @Override
@@ -59,32 +67,20 @@ public class PostRepository implements IPosts {
             public void call(final Subscriber<? super Boolean> subscriber) {
                 mDatabaseReference.child("users")
                         .child(mFirebaseUser.getUid())
-                        .child(post.getTitle())
-                        .child(post.getBody())
+                        .child("posts")
                         .push()
-//                        .setValue(new PhotoComment(Calendar.getInstance().getTime(), message))
-                        .addListenerForSingleValueEvent(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(DataSnapshot dataSnapshot) {
-
+                        .setValue(new Post(post.getTitle(),post.getBody()))
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override public void onComplete(@NonNull Task<Void> task) {
+                                subscriber.onNext(task.isSuccessful());
+                                subscriber.onCompleted();
                             }
-
-                            @Override
-                            public void onCancelled(DatabaseError databaseError) {
-
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override public void onFailure(@NonNull Exception e) {
+                                subscriber.onError(new FirebaseException(e.getMessage()));
                             }
                         });
-//                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-//                            @Override public void onComplete(@NonNull Task<Void> task) {
-//                                subscriber.onNext(task.isSuccessful());
-//                                subscriber.onCompleted();
-//                            }
-//                        })
-//                        .addOnFailureListener(new OnFailureListener() {
-//                            @Override public void onFailure(@NonNull Exception e) {
-//                                subscriber.onError(new FirebaseException(e.getMessage()));
-//                            }
-//                        });
             }
         });
     }

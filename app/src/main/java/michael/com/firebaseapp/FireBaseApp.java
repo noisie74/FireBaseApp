@@ -25,7 +25,6 @@ public class FireBaseApp extends Application {
         }
 
         inject();
-
     }
 
     private void inject() {
