@@ -10,6 +10,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import javax.inject.Inject;
 
 import butterknife.BindView;
@@ -23,7 +28,7 @@ import michael.com.firebaseapp.data.repository.PostRepository;
 
 public class AddPostFragment extends Fragment implements AddPostContract.View {
 
-    @Inject PostRepository mPostRepository;
+    PostRepository mPostRepository;
 
     @BindView(R.id.add_note_title) EditText mTitleEditText;
     @BindView(R.id.add_note_description) EditText mDescriptionEditText;
@@ -42,27 +47,44 @@ public class AddPostFragment extends Fragment implements AddPostContract.View {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        DatabaseReference mDatabaseReference;
+        FirebaseAuth mFirebaseAuth;
+        FirebaseUser mFirebaseUser;
 
+        mFirebaseAuth = FirebaseAuth.getInstance();
+        mFirebaseUser = mFirebaseAuth.getCurrentUser();
+        mDatabaseReference = FirebaseDatabase.getInstance().getReference();
+
+
+        mPostRepository = new PostRepository(mFirebaseAuth,mFirebaseUser,mDatabaseReference);
+        mActionListener = new AddPostPresenter(mPostRepository, this);
+
+        savePostWhenButtonSaveClicked();
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.add_post_fragment, container, false);
-        mActionListener = new AddPostPresenter(mPostRepository, this);
         ButterKnife.bind(this, rootView);
 
         setHasOptionsMenu(true);
         setRetainInstance(true);
 
-        savePostWhenButtonSaveClicked();
+//        savePostWhenButtonSaveClicked();
 
         return rootView;
     }
 
     private void savePostWhenButtonSaveClicked() {
-        mActionListener.savePost(mTitleEditText.getText().toString(), mDescriptionEditText.getText().toString());
-        hideFragment();
+
+        mPostButton.setOnClickListener(v -> {
+
+            mActionListener.savePost(mTitleEditText.getText().toString(), mDescriptionEditText.getText().toString());
+            hideFragment();
+        });
+
+
     }
 
     @Override

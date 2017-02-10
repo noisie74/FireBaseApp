@@ -53,16 +53,18 @@ public class PostActivity extends AppCompatActivity implements AddPostContract {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_new_post) {
 
-            initFragment(AddPostFragment.newInstance());
+//            initFragment(AddPostFragment.newInstance());
 
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
+            transaction.replace(R.id.contentFrame, AddPostFragment.newInstance(), "TAG");
+            transaction.addToBackStack("TAG");
+            transaction.commit();
         }
 
         return super.onOptionsItemSelected(item);
@@ -78,8 +80,8 @@ public class PostActivity extends AppCompatActivity implements AddPostContract {
         // Add the AddNoteFragment to the layout
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.add(R.id.contentFrame, detailFragment, detailFragment.toString());
-        transaction.addToBackStack(detailFragment.toString());
+        transaction.add(R.id.contentFrame, detailFragment, "TAG");
+        transaction.addToBackStack("TAG");
         transaction.commit();
     }
 

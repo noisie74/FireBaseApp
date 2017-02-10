@@ -1,6 +1,7 @@
 package michael.com.firebaseapp.data.repository;
 
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -19,6 +20,7 @@ import javax.inject.Inject;
 
 import dagger.internal.Preconditions;
 import michael.com.firebaseapp.FireBaseApp;
+import michael.com.firebaseapp.data.IUserAuth;
 import michael.com.firebaseapp.data.model.Post;
 import rx.Observable;
 import rx.Subscriber;
@@ -30,17 +32,17 @@ import rx.subscriptions.Subscriptions;
 
 public class PostRepository implements IPosts {
 
+    IUserAuth currentAuthUSer;
     FireBaseApp fireBaseApp;
     DatabaseReference mDatabaseReference;
     FirebaseAuth mFirebaseAuth;
     FirebaseUser mFirebaseUser;
 
-    @Inject public PostRepository() {
-        mFirebaseAuth = FirebaseAuth.getInstance();
-        mFirebaseUser = mFirebaseAuth.getCurrentUser();
-        mDatabaseReference = FirebaseDatabase.getInstance().getReference();
+    public PostRepository(FirebaseAuth firebaseAuth, FirebaseUser firebaseUser, DatabaseReference databaseReference) {
+        this.mFirebaseAuth = firebaseAuth;
+        this.mFirebaseUser = firebaseUser;
+        this.mDatabaseReference = databaseReference;
     }
-
 
 
 //    private void initInjection() {
@@ -69,18 +71,21 @@ public class PostRepository implements IPosts {
                         .child(mFirebaseUser.getUid())
                         .child("posts")
                         .push()
-                        .setValue(new Post(post.getTitle(),post.getBody()))
+                        .setValue(new Post(post.getTitle(), post.getBody()))
                         .addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override public void onComplete(@NonNull Task<Void> task) {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
                                 subscriber.onNext(task.isSuccessful());
                                 subscriber.onCompleted();
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
-                            @Override public void onFailure(@NonNull Exception e) {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
                                 subscriber.onError(new FirebaseException(e.getMessage()));
                             }
                         });
+                Log.d("Repository",mFirebaseUser.getUid().toLowerCase());
             }
         });
     }

@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -23,10 +24,19 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import michael.com.firebaseapp.R;
 import michael.com.firebaseapp.addpost.PostActivity;
+import michael.com.firebaseapp.data.IUserAuth;
 import michael.com.firebaseapp.toppost.TopPostActivity;
+import rx.Observable;
+import rx.Subscriber;
+import rx.Subscription;
+import rx.functions.Action0;
+import rx.subscriptions.Subscriptions;
+import timber.log.Timber;
 
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements
+        NavigationView.OnNavigationItemSelectedListener,
+        IUserAuth {
 
     private FirebaseAuth mFirebaseAuth;
     private FirebaseUser mFirebaseUser;
@@ -51,6 +61,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         ButterKnife.bind(this);
         setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, mToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
         navigationView.setNavigationItemSelectedListener(this);
 
         initFireBase(); // Initialize FireBase
@@ -71,8 +88,37 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
+    @Override
+    public Observable<FirebaseUser> observeAuthState(FirebaseAuth firebaseAuth) {
+        return Observable.create(new Observable.OnSubscribe<FirebaseUser>() {
+            @Override
+            public void call(Subscriber<? super FirebaseUser> subscriber) {
+                FirebaseAuth.AuthStateListener authStateListener = new FirebaseAuth.AuthStateListener() {
+                    @Override
+                    public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                        if (!subscriber.isUnsubscribed()) {
+                            subscriber.onNext(firebaseAuth.getCurrentUser());
+                            Timber.d("Current user: "+ firebaseAuth.getCurrentUser().toString());
+                        }
+                    }
+                };
 
-//    private void populateListViewWithData() {
+                firebaseAuth.addAuthStateListener(authStateListener);
+
+                subscriber.add(Subscriptions.create(new Action0() {
+                    @Override
+                    public void call () {
+                        firebaseAuth.removeAuthStateListener(authStateListener);
+
+                    }
+
+                }));
+            }
+        });
+    }
+
+
+    //    private void populateListViewWithData() {
 //        mDatabase.child("users").child(mUserId).child("posts").addChildEventListener(new ChildEventListener() {
 //            @Override
 //            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
@@ -175,6 +221,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mFirebaseUser = mFirebaseAuth.getCurrentUser();
         mDatabase = FirebaseDatabase.getInstance().getReference();
     }
+
+//    public FirebaseAuth getCurrentUser(FirebaseAuth firebaseAuth) {
+//        return FirebaseAuth.getInstance();
+//    }
 
     private void loadLogInView() {
         Intent intent = new Intent(this, LogInActivity.class);

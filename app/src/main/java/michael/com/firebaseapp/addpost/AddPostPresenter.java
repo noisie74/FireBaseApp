@@ -12,7 +12,7 @@ import michael.com.firebaseapp.data.repository.PostRepository;
 
 public class AddPostPresenter implements AddPostContract.UserActionListener {
 
-    @Inject PostRepository mRepository;
+    PostRepository mRepository;
     FireBaseApp mFireBaseApp;
 
     private final AddPostContract.View mView;
@@ -22,7 +22,7 @@ public class AddPostPresenter implements AddPostContract.UserActionListener {
         this.mRepository = postRepository;
         mView = view;
 
-        mFireBaseApp.getApplicationComponent().inject(this);
+//        mFireBaseApp.getApplicationComponent().inject(this);
     }
 
     @Override

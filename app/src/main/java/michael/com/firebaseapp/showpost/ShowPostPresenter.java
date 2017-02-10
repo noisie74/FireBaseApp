@@ -11,11 +11,11 @@ import michael.com.firebaseapp.data.repository.PostRepository;
 
 public class ShowPostPresenter implements ShowPostContract {
 
-    @Inject PostRepository mPostRepository;
+    PostRepository mPostRepository;
     ShowPostContract.View mView;
     FireBaseApp fireBaseApp;
 
-   @Inject public ShowPostPresenter(PostRepository postRepository, ShowPostContract.View view) {
+   public ShowPostPresenter(PostRepository postRepository, ShowPostContract.View view) {
         this.mPostRepository = postRepository;
         mView = view;
 
