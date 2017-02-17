@@ -9,6 +9,7 @@ import butterknife.OnClick;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -19,19 +20,23 @@ import michael.com.firebaseapp.data.model.Post;
 public class AddPostAdapter extends RecyclerView.Adapter<AddPostAdapter.ViewHolder> {
 
     private List<Post> postObject;
-    OnItemClicked onItemClicked;
+    private final OnItemClickListener listener;
 
-    public AddPostAdapter(List<Post> postObject, OnItemClicked onItemClicked) {
+    public AddPostAdapter(List<Post> postObject, OnItemClickListener onItemClicked) {
         this.postObject = postObject;
-        this.onItemClicked = onItemClicked;
+        this.listener = onItemClicked;
     }
+
+    public interface OnItemClickListener {
+        void onItemClick(View itemView, int position);
+    }
+
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         @BindView(R.id.post_title) TextView cardTitle;
         @BindView(R.id.post_description) TextView cardDescription;
 
-        public int position = -1;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -41,8 +46,8 @@ public class AddPostAdapter extends RecyclerView.Adapter<AddPostAdapter.ViewHold
 
         @OnClick(R.id.post_row)
         public void onItemClick() {
-            if (onItemClicked != null) {
-                onItemClicked.onItemClicked(position);
+            if (listener != null) {
+                listener.onItemClick(itemView, getLayoutPosition());
             }
         }
     }

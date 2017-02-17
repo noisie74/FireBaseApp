@@ -3,150 +3,6 @@
 
     <item
         is-multidex="true"
-        jar="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="0d3de91e5594f30de60348d155519462e6e56ca8">
-        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_c914a78dcfb53c547b700b93cfb8a40001d085a7/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
-        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-10.0.1_d4d16421455059b22cf1d2059b1ea8b8750dc9a3/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/exploded-aar/com.jakewharton.timber/timber/4.1.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="aba9abcfe7ce6d935add115f5ce20254b037d583">
-        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.jakewharton.timber-timber-4.1.2_f2e0a725bf03640aa0f195ed6342456b246a808b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="0dc8ab07eeceda5e99b305c8069765056b6e5c9d">
-        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-9.0.0_4b373875e2dfe588d78b230a82ab4af0caf6d24e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
-        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-10.0.1_ac3fe2c3c414ea44fa61b95911687575317ea783/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Mikhail/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="98476622f10715998eacf9240d6b479f12c66143">
-        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.6.0_37c587c16257f56aa0012d4340c0a3939b8eacda/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
-        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.1.0_300da308defa5ecee2e5a15d7870e5300f1f972b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Mikhail/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.0.2/43eeae0b9fb087bb3194ba59ab63a38a32fbf3e/retrofit-2.0.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="043eeae0b9fb087bb3194ba59ab63a38a32fbf3e">
-        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/retrofit-2.0.2_8fde20a0bc748ad282394d504eb1a4fb6fbdbfa0/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="aee64634871d88a419d59eb743c1258a60f19700">
-        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.1.0_1a3279d995ec73a9a618d40cc37140c864720339/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="9cca2818594cc5348806d6662133491e7ea0fa8d">
-        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-10.0.1_117eb643c2fc6540c9dd801fe719aa7ac100169d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Mikhail/.gradle/caches/modules-2/files-2.1/com.google.dagger/dagger/2.2/febfd2d9e89bde4c3a9723bcd9522cba96bddac7/dagger-2.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="febfd2d9e89bde4c3a9723bcd9522cba96bddac7">
-        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/dagger-2.2_7a314b4fe7795f02cbd10140ebf873c177894981/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
-        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.1.0_993fd57f49b411ed9483090feee3d032b2e4c1c5/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
-        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-10.0.1_bae501d83d6f9973953ebe08124b6be0c4c24187/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="4ef8ab5fee042023018249474bc93bd4b2b9c17e">
-        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-9.0.0_95f4667c07719f31f3ce67f8bef983c693f9c504/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="8010ae6ed32828a145b25ec97bc07b7a83c6318f">
-        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-10.0.1_276d9fa7ce7d68e7fdf7cf2bdc4df93a474bc549/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Mikhail/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="6975da39a7040257bd51d21a231b76c915872d38">
-        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/javax.inject-1_3d6605a1dd9843799228ff8cd4a4c5b4727de045/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/exploded-aar/com.jakewharton/butterknife/8.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -183,6 +39,33 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d62bb303d3e4128e324ede8e7eeb001ed9454936">
+        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_c914a78dcfb53c547b700b93cfb8a40001d085a7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-10.0.1_d4d16421455059b22cf1d2059b1ea8b8750dc9a3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/exploded-aar/com.jakewharton.timber/timber/4.1.2/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="aba9abcfe7ce6d935add115f5ce20254b037d583">
+        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.jakewharton.timber-timber-4.1.2_f2e0a725bf03640aa0f195ed6342456b246a808b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -210,6 +93,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="0dc8ab07eeceda5e99b305c8069765056b6e5c9d">
+        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-9.0.0_4b373875e2dfe588d78b230a82ab4af0caf6d24e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -228,6 +120,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-10.0.1_ac3fe2c3c414ea44fa61b95911687575317ea783/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -243,6 +144,33 @@
         revision="24.0.2"
         sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
         <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.1.0_919d49ddb67c15047777fc4ca87fcc16017f3cfd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Mikhail/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.6.0_37c587c16257f56aa0012d4340c0a3939b8eacda/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
+        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.1.0_300da308defa5ecee2e5a15d7870e5300f1f972b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Mikhail/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.0.2/43eeae0b9fb087bb3194ba59ab63a38a32fbf3e/retrofit-2.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="043eeae0b9fb087bb3194ba59ab63a38a32fbf3e">
+        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/retrofit-2.0.2_8fde20a0bc748ad282394d504eb1a4fb6fbdbfa0/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -291,12 +219,39 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="aee64634871d88a419d59eb743c1258a60f19700">
+        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.1.0_1a3279d995ec73a9a618d40cc37140c864720339/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/Mikhail/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-annotations/8.0.1/345b89f45d02d8b09400b472fab7b7e38f4ede1f/butterknife-annotations-8.0.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="345b89f45d02d8b09400b472fab7b7e38f4ede1f">
         <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/butterknife-annotations-8.0.1_228f5bcc741996ed76a7cdc4110fe229e11ad324/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="9cca2818594cc5348806d6662133491e7ea0fa8d">
+        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-10.0.1_117eb643c2fc6540c9dd801fe719aa7ac100169d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Mikhail/.gradle/caches/modules-2/files-2.1/com.google.dagger/dagger/2.2/febfd2d9e89bde4c3a9723bcd9522cba96bddac7/dagger-2.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="febfd2d9e89bde4c3a9723bcd9522cba96bddac7">
+        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/dagger-2.2_7a314b4fe7795f02cbd10140ebf873c177894981/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -309,12 +264,57 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
+        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.1.0_993fd57f49b411ed9483090feee3d032b2e4c1c5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-10.0.1_bae501d83d6f9973953ebe08124b6be0c4c24187/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="4ef8ab5fee042023018249474bc93bd4b2b9c17e">
+        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-9.0.0_95f4667c07719f31f3ce67f8bef983c693f9c504/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/Mikhail/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.1.3/5a1aef6a9d56efb473b8be6b66689077e7317c45/rxjava-1.1.3.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="5a1aef6a9d56efb473b8be6b66689077e7317c45">
         <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/rxjava-1.1.3_94f5cff63e09c2318fd513bd57ecae9eed9eb213/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="8010ae6ed32828a145b25ec97bc07b7a83c6318f">
+        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-10.0.1_276d9fa7ce7d68e7fdf7cf2bdc4df93a474bc549/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Mikhail/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/Users/Mikhail/AndroidStudioProjects/FireBaseApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/javax.inject-1_3d6605a1dd9843799228ff8cd4a4c5b4727de045/classes.dex" />
     </item>
     <item
         is-multidex="true"

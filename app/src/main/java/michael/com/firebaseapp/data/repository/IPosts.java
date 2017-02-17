@@ -1,6 +1,8 @@
 package michael.com.firebaseapp.data.repository;
 
 import michael.com.firebaseapp.data.model.Post;
+import michael.com.firebaseapp.data.model.Response;
+import michael.com.firebaseapp.data.model.Users;
 import rx.Observable;
 
 /**
@@ -9,7 +11,9 @@ import rx.Observable;
 
 public interface IPosts {
 
-    Observable sendPost(Post post);
+//    Observable sendPost(Post post);
 
-    Observable getPost(String title);
+    void sendPost(Post post);
+
+    Observable getPost();
 }

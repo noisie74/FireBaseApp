@@ -9,18 +9,24 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import michael.com.firebaseapp.R;
+import michael.com.firebaseapp.addpost.adapter.AddPostAdapter;
+import michael.com.firebaseapp.data.model.Post;
 import michael.com.firebaseapp.data.repository.PostRepository;
+import michael.com.firebaseapp.showpost.ShowPostFragment;
 
 /**
  * Created by Mikhail on 2/2/17.
@@ -56,7 +62,7 @@ public class AddPostFragment extends Fragment implements AddPostContract.View {
         mDatabaseReference = FirebaseDatabase.getInstance().getReference();
 
 
-        mPostRepository = new PostRepository(mFirebaseAuth,mFirebaseUser,mDatabaseReference);
+        mPostRepository = new PostRepository(mFirebaseAuth, mFirebaseUser, mDatabaseReference);
         mActionListener = new AddPostPresenter(mPostRepository, this);
 
         savePostWhenButtonSaveClicked();
@@ -84,8 +90,29 @@ public class AddPostFragment extends Fragment implements AddPostContract.View {
             hideFragment();
         });
 
-
     }
+
+//    @Override
+//    public void showPostList(List<Post> list) {
+//        AddPostAdapter mAdapter = new AddPostAdapter(list, new AddPostAdapter.OnItemClickListener() {
+//
+//            ShowPostFragment fragment = new ShowPostFragment();
+//
+//
+//
+//            @Override
+//            public void onItemClick(View itemView, int position) {
+//
+//                Toast.makeText(getContext(), String.valueOf(position), Toast.LENGTH_LONG).show();
+//
+////                ShowPostFragment fragment = new ShowPostFragment();
+////
+////                getActivity().onAttachFragment(fragment);
+//
+//
+//            }
+//        });
+//    }
 
     @Override
     public void showEmptyPostError() {
