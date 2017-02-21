@@ -36,7 +36,6 @@ public class PostActivity extends AppCompatActivity implements AddPostContract {
         actionBar.setTitle(R.string.add_note);
         actionBar.setHomeButtonEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(true);
 
 //        if (null == savedInstanceState) {
         initFragment(ShowPostFragment.newInstance());

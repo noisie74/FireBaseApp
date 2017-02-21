@@ -87,7 +87,7 @@ public class AddPostFragment extends Fragment implements AddPostContract.View {
         mPostButton.setOnClickListener(v -> {
 
             mActionListener.savePost(mTitleEditText.getText().toString(), mDescriptionEditText.getText().toString());
-            hideFragment();
+//            hideFragment();
         });
 
     }

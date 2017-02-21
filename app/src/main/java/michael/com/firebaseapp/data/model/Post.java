@@ -1,5 +1,7 @@
 package michael.com.firebaseapp.data.model;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by Mikhail on 1/31/17.
  */
@@ -8,6 +10,8 @@ public class Post {
 
     private String title;
     private String body;
+    @SerializedName("$item_id")
+    private String postID;
 
     public Post() {
     }
@@ -31,6 +35,14 @@ public class Post {
 
     public void setBody(String body) {
         this.body = body;
+    }
+
+    public String getPostID() {
+        return postID;
+    }
+
+    public void setPostID(String postID) {
+        this.postID = postID;
     }
 
     public boolean isEmpty() {

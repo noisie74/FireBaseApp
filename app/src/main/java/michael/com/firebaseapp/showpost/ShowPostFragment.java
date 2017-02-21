@@ -6,39 +6,36 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
-import android.widget.Toast;
+import android.widget.TextView;
 
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import michael.com.firebaseapp.R;
-import michael.com.firebaseapp.addpost.adapter.AddPostAdapter;
 import michael.com.firebaseapp.data.model.Post;
-import michael.com.firebaseapp.data.repository.PostRepository;
 
 /**
  * Created by Mikhail on 2/7/17.
  */
 
-public class ShowPostFragment extends Fragment implements ShowPostContract.View {
+public class ShowPostFragment extends Fragment {
 
     private LinearLayoutManager linearLayoutManager;
-    @BindView(R.id.swipeContainer) SwipeRefreshLayout swipeContainer;
     @BindView(R.id.recycler_view) RecyclerView recyclerView;
-    ShowPostContract listener;
-    PostRepository mPostRepository;
-    List<Post> mPostList;
+    private DatabaseReference mDatabase;
+    FirebaseUser mFirebaseUser;
+    FirebaseAuth mFirebaseAuth;
+    private FirebaseRecyclerAdapter<Post, PostHolder> mAdapter;
+
 
     public static ShowPostFragment newInstance() {
         return new ShowPostFragment();
@@ -50,7 +47,6 @@ public class ShowPostFragment extends Fragment implements ShowPostContract.View 
         super.onActivityCreated(savedInstanceState);
 
 
-//        listener = new ShowPostPresenter(mPostRepository,this);
     }
 
     @Nullable
@@ -61,59 +57,46 @@ public class ShowPostFragment extends Fragment implements ShowPostContract.View 
         linearLayoutManager = new LinearLayoutManager(this.getActivity());
 
         recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setHasFixedSize(true);
+
 
         setHasOptionsMenu(true);
         setRetainInstance(true);
 
-//        listener.showPostsList();
-
-        DatabaseReference mDatabaseReference;
-        FirebaseAuth mFirebaseAuth;
-        FirebaseUser mFirebaseUser;
-
         mFirebaseAuth = FirebaseAuth.getInstance();
         mFirebaseUser = mFirebaseAuth.getCurrentUser();
-        mDatabaseReference = FirebaseDatabase.getInstance().getReference();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
+        mAdapter = new FirebaseRecyclerAdapter<Post, PostHolder>(Post.class, R.layout.note_card,
+                PostHolder.class, mDatabase.child("users").child(mFirebaseUser.getUid()).child("posts")) {
+            @Override
+            public void populateViewHolder(PostHolder postMessageViewHolder, Post postMessage, int position) {
+                postMessageViewHolder.setName(postMessage.getTitle());
+                postMessageViewHolder.setText(postMessage.getBody());
 
-        mPostRepository = new PostRepository(mFirebaseAuth, mFirebaseUser, mDatabaseReference);
-
-        mPostList = new ArrayList<>();
-
-        showPostList(mPostList);
+            }
+        };
+        recyclerView.setAdapter(mAdapter);
 
         return rootView;
     }
 
+    public static class PostHolder extends RecyclerView.ViewHolder {
+        private final TextView mPostField;
+        private final TextView mBodyField;
 
-    @Override
-    public void showEmptyPostListError() {
+        public PostHolder(View itemView) {
+            super(itemView);
+            mPostField = (TextView) itemView.findViewById(R.id.post_title);
+            mBodyField = (TextView) itemView.findViewById(R.id.post_description);
+        }
 
+        public void setName(String name) {
+            mPostField.setText(name);
+        }
+
+        public void setText(String text) {
+            mBodyField.setText(text);
+        }
     }
-
-    @Override
-    public void hideFragment() {
-
-    }
-
-//    @Override
-    public void showPostList(List<Post> list) {
-
-//        if (mPostRepository != null){
-//
-            mPostRepository.getPost();
-//        }
-
-
-        AddPostAdapter adapter = new AddPostAdapter(list, new AddPostAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(View itemView, int position) {
-                Toast.makeText(getContext(), String.valueOf(position), Toast.LENGTH_LONG).show();
-            }
-        });
-
-        recyclerView.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
-    }
-
 }

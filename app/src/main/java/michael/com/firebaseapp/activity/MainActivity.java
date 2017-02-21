@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -50,7 +51,8 @@ public class MainActivity extends AppCompatActivity implements
 //    @BindView(R.id.addButton) Button mButton;
     @BindView(R.id.nav_view) NavigationView navigationView;
     @BindView(R.id.drawer_layout) DrawerLayout drawer;
-    @BindView(R.id.recycler_view) RecyclerView mRecyclerView;
+//    @BindView(R.id.recycler_view) RecyclerView mRecyclerView;
+    @BindView(R.id.image_main_view) ImageView mainImage;
 
 
     @Override
@@ -69,6 +71,7 @@ public class MainActivity extends AppCompatActivity implements
         toggle.syncState();
 
         navigationView.setNavigationItemSelectedListener(this);
+        mainImage.setImageResource(R.drawable.firebase);
 
         initFireBase(); // Initialize FireBase
 
@@ -77,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements
             loadLogInView();
         } else {
             mUserId = mFirebaseUser.getUid();
-            adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1);
+//            adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1);
 //            mListView.setAdapter(adapter);
 //
 //            setButtonClickListener();
@@ -85,6 +88,9 @@ public class MainActivity extends AppCompatActivity implements
 //            deletePostTitle();
 //            deletePostBody();
         }
+
+        Intent intent = new Intent(MainActivity.this, PostActivity.class);
+        startActivity(intent);
 
     }
 
@@ -271,6 +277,9 @@ public class MainActivity extends AppCompatActivity implements
             super.onBackPressed();
         }
     }
+
+
+
 }
 
 

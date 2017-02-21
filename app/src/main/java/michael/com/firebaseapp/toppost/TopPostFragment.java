@@ -21,7 +21,6 @@ import michael.com.firebaseapp.R;
 public class TopPostFragment extends Fragment {
 
     private LinearLayoutManager linearLayoutManager;
-    @BindView(R.id.swipeContainer) SwipeRefreshLayout swipeContainer;
     @BindView(R.id.recycler_view) RecyclerView recyclerView;
 
     public static TopPostFragment newInstance() {

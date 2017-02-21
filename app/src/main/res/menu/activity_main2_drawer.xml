@@ -3,11 +3,11 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_top_posts"
-            android:title="Top Posts"/>
-        <item
             android:id="@+id/nav_my_posts"
             android:title="My Posts"/>
+        <item
+            android:id="@+id/nav_top_posts"
+            android:title="Top Posts"/>
         <item
             android:id="@+id/nav_search"
             android:title="Search"/>

@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+
 import java.util.List;
 
 import michael.com.firebaseapp.R;
@@ -21,9 +23,11 @@ public class AddPostAdapter extends RecyclerView.Adapter<AddPostAdapter.ViewHold
 
     private List<Post> postObject;
     private final OnItemClickListener listener;
+    DataSnapshot data;
 
     public AddPostAdapter(List<Post> postObject, OnItemClickListener onItemClicked) {
         this.postObject = postObject;
+//        this.data = data;
         this.listener = onItemClicked;
     }
 
@@ -62,6 +66,9 @@ public class AddPostAdapter extends RecyclerView.Adapter<AddPostAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+
+//        holder.cardTitle.setText(data.child("title").getValue().toString());
+//        holder.cardDescription.setText(data.child("body").getValue().toString());
 
         holder.cardTitle.setText(postObject.get(position).getTitle());
         holder.cardDescription.setText(postObject.get(position).getBody());
