@@ -1,10 +1,6 @@
 package michael.com.firebaseapp;
 
 import android.app.Application;
-
-//import michael.com.firebaseapp.di.ApplicationComponent;
-//import michael.com.firebaseapp.di.DaggerApplicationComponent;
-//import michael.com.firebaseapp.di.DataModule;
 import timber.log.Timber;
 
 
@@ -14,8 +10,6 @@ import timber.log.Timber;
 
 public class FireBaseApp extends Application {
 
-//    private ApplicationComponent component;
-
     @Override
     public void onCreate() {
         super.onCreate();
@@ -24,17 +18,6 @@ public class FireBaseApp extends Application {
             Timber.plant(new Timber.DebugTree());
         }
 
-//        inject();
     }
 
-//    private void inject() {
-//        component = DaggerApplicationComponent
-//                .builder()
-//                .dataModule(new DataModule(this))
-//                .build();
-//    }
-//
-//    public ApplicationComponent getApplicationComponent(){
-//        return component;
-//    }
 }

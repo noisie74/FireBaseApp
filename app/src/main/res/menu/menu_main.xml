@@ -3,12 +3,6 @@
       xmlns:tools="http://schemas.android.com/tools"
       tools:context="michael.com.firebaseapp.activity.MainActivity">
 
-    <!--<item-->
-        <!--android:id="@+id/drawer_button"-->
-        <!--android:orderInCategory="100"-->
-        <!--android:icon="@android:drawable/ic_men"-->
-        <!--app:showAsAction="always"/>-->
-
     <item
         android:id="@+id/action_new_post"
         android:orderInCategory="100"

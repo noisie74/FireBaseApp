@@ -16,7 +16,6 @@ import michael.com.firebaseapp.data.repository.PostRepository;
 public class AddPostPresenter implements AddPostContract.UserActionListener {
 
     PostRepository mRepository;
-    FireBaseApp mFireBaseApp;
 
     private final AddPostContract.View mView;
 
@@ -25,7 +24,6 @@ public class AddPostPresenter implements AddPostContract.UserActionListener {
         this.mRepository = postRepository;
         mView = view;
 
-//        mFireBaseApp.getApplicationComponent().inject(this);
     }
 
     @Override
@@ -40,11 +38,4 @@ public class AddPostPresenter implements AddPostContract.UserActionListener {
         }
 
     }
-
-//    @Override
-//    public void getPosts(Response response) {
-//        mRepository.getPost();
-//        List<Post> list = response.getPostList();
-//        mView.showPostList(list);
-//    }
 }

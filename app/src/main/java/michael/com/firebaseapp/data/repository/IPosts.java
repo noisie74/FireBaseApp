@@ -11,8 +11,6 @@ import rx.Observable;
 
 public interface IPosts {
 
-//    Observable sendPost(Post post);
-
     void sendPost(Post post);
 
     Observable getPost();
