@@ -87,10 +87,10 @@ public class MainActivity extends AppCompatActivity implements
 //            populateListViewWithData();
 //            deletePostTitle();
 //            deletePostBody();
+            Intent intent = new Intent(MainActivity.this, PostActivity.class);
+            startActivity(intent);
         }
 
-        Intent intent = new Intent(MainActivity.this, PostActivity.class);
-        startActivity(intent);
 
     }
 
